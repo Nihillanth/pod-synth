@@ -1,8 +1,6 @@
+word = input()
 
-for _ in range(100):
-    print('zalupa')
-    for _ in range(100):
-        print("paizda")
-        for _ in range(100):
-            print('huy')
-    
+if word == word[::-1]:
+    print('Yes')
+else:
+    print('NO')
