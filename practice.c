@@ -2,9 +2,12 @@
 
 int main(void)
 {
-	printf("Esli t ieto chitaesh to u tebya vse poluchilos")
-	printf("Pizdec, yebal ya etot C\n");
-	printf("Privet, Pidori i sasite jopu\n");
+	float inch;
+	float santi;
+	printf("\n Input inches >>> ");
+	scanf("%f", &inch);
+	santi = inch * 2.54;
+	printf("\nsanti = %f\n", santi); 
 	return 0;
 }
 
