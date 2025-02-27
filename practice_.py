@@ -1,3 +1,4 @@
+"""
 import time
 
 start = time.time()
@@ -12,3 +13,21 @@ while i != int(pin):
         print(f'Число итераций >>> {count}')
 end = time.time()
 print(end - start)
+
+
+def fac(n):
+    the_product = 1
+    while n > 0:
+        the_product *= n
+        n = n - 1
+    return the_product
+
+print(fac(5))
+"""
+def fac_(n):
+    if n == 0:
+        return 1
+    return n * fac_(n - 1)
+
+print(fac_(5))
+
