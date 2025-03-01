@@ -1,4 +1,5 @@
-# include <stdio.h>
+#include <stdio.h>
+#include <math.h>
 /*
 int main(void)
 {
@@ -38,7 +39,7 @@ int main(void)
 	return the_product;
 }
 
-*/
+
 //
 // Задача по нахожденю факториала рекурсивно.
 //
@@ -63,9 +64,45 @@ int main(void){
 	return 0;
 }
 
-//
-//
-// Пора передохнуть и перекусить.
-//
-//
+*/
+
+int is_prime(int n) {
+	if (n <= 1) return 0;
+	if (n == 2) return 1;
+	if (n % 2 == 0) return 0;
+
+	for (int i = 3; i <= sqrt(n); i += 2) {
+		if (n % i == 0) return 0;
+	}
+	return 1;
+}
+
+
+int main(void){
+	int a, b;
+
+	printf("input a >>> ");
+	scanf("%d", &a);
+	printf("input b >>> ");
+	scanf("%d", &b);
+	
+	if(a <= b){
+		int flag = 1;
+		for (int i = a; i <= b; i++){
+			if (is_prime(i)) {
+			printf("%d\n", i);
+			flag = 0;
+			}
+		}
+		printf("\n");
+	} else {
+		printf("Error\n");
+	}
+
+	return 0;
+			
+}
+
+
+
 
