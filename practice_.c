@@ -63,7 +63,6 @@ int main(void){
 
 	return 0;
 }
-
 */
 
 int is_prime(int n) {
