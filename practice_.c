@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 
 /*
 int main(void)
@@ -103,7 +104,7 @@ int main(void){
 			
 }
 
-*/
+
 int main(void){
 	int n;
 
@@ -138,5 +139,90 @@ int main(void){
 	printf("Минимальный элемент >>> %d, индекс >>> %d\n", min, min_index);
 
 	return 0;
+
 }
+
+/
+//
+///
+//// Выведение масссиво рекурсивно
+///
+//
+/
+
+void printArray(int arr[], int size, int index) {
+	if (index >= size) {
+		return;
+	}
+	printf("%d ", arr[index] + 1);
+	printArray(arr ,size, index + 1);
+}
+
+int main(void) {
+	int n;
+
+	printf("Input size >>> ");
+	scanf("%d", &n);
+
+	int numbers[n];
+
+	for (int i = 0; i < n; i++) {
+		numbers[i] = i;
+	}
+
+	printf("Array >>> ");
+	printArray(numbers, n, 0);
+	printf("\n");
+
+	return 0;
+}
+*/
+
+
+/// Дан список слов в алфавитном порядке. Напишите функцию, которая выполнит двоичный
+/// поиск слова и вернет ответ о том, имеется ли оно в списке.
+
+
+
+int binary_search(char arr[][10], int size, char word[]) {
+	int first = 0;
+	int last = size - 1;
+
+	while (last >= first) {
+		int mid = (first + last) / 2;
+		if (strcmp(arr[mid], word) == 0)  {
+			return 1;
+		} else if (strcmp(word, arr[mid]) < 0) {
+			last = mid - 1;
+		} else {
+			first = mid + 1;
+		}
+	}
+
+	return 0;
+}
+
+
+int main(void) {
+	
+    char words[4][10] = {"apple", "banana", "cherry", "date"};
+
+    int size = sizeof(words) / sizeof(words[0]);
+
+    char search_word[10];
+    printf("Input word to search >>> ");
+    scanf("%s", search_word);
+
+    int found = binary_search(words, size, search_word);
+
+    if (found == 1) {
+	    printf("Word found\n");
+    } else {
+	    printf("fail\n");
+    }
+
+    return 0;
+}
+
+
 
