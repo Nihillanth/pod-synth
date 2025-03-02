@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+
 /*
 int main(void)
 {
@@ -63,14 +64,14 @@ int main(void){
 
 	return 0;
 }
-*/
+
 
 int is_prime(int n) {
 	if (n <= 1) return 0;
 	if (n == 2) return 1;
 	if (n % 2 == 0) return 0;
 
-	for (int i = 3; i <= sqrt(n); i += 2) {
+	for (int i = 3; i <= sqrtf(n); i += 2) {
 		if (n % i == 0) return 0;
 	}
 	return 1;
@@ -102,6 +103,40 @@ int main(void){
 			
 }
 
+*/
+int main(void){
+	int n;
 
+	printf("Введите размер массива >>> ");
+	scanf("%d", &n);
+	
+	int numbers[n];
 
+	printf("Введите числа массива ");
+	for (int i = 0; i < n; i++) {
+		printf(">>> ");
+		scanf("%d", &numbers[i]);
+	}
+	
+	int max = numbers[0];
+	int min = numbers[0];
+	int max_index = 0;
+	int min_index = 0;
+
+	for (int j = 1; j < n; j++) {
+		if (numbers[j] > max) {
+				max = numbers[j];
+				max_index = j;
+				}
+		if (numbers[j] <= min) {
+				min = numbers[j];
+				min_index = j;
+				}
+	}
+
+	printf("Максимальный элемент >>> %d, индекс >>> %d\n", max, max_index);
+	printf("Минимальный элемент >>> %d, индекс >>> %d\n", min, min_index);
+
+	return 0;
+}
 
