@@ -176,7 +176,7 @@ int main(void) {
 
 	return 0;
 }
-*/
+
 
 
 /// Дан список слов в алфавитном порядке. Напишите функцию, которая выполнит двоичный
@@ -224,5 +224,12 @@ int main(void) {
     return 0;
 }
 
+*/
 
+int main() {
+	const char str[] = "Hello, world!";
+	size_t length = strlen(str);
+	int len = strlen(str);
 
+	printf("Длина строки: %zu, Или: %d\n", length, len); // 13
+}
