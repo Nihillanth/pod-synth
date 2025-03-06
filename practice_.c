@@ -224,7 +224,9 @@ int main(void) {
     return 0;
 }
 
-*/
+///
+//// Длинна стоки и так и так >>> 
+/// 
 
 int main() {
 	const char str[] = "Hello, world!";
@@ -232,4 +234,99 @@ int main() {
 	int len = strlen(str);
 
 	printf("Длина строки: %zu, Или: %d\n", length, len); // 13
+
 }
+
+
+//
+///Пузырьковая сортировка
+//
+
+
+void bubble_sort(int a_list[], int list_length) {
+	for (int i = 0; i < list_length - 1; i++) {
+		int no_swap = 1;
+		for (int j = 0; j < list_length - 1; j++) {
+			if (a_list[j] > a_list[j + 1]) {
+				int temp = a_list[j];
+				a_list[j] = a_list[j + 1];
+				a_list[j + 1] = temp;
+				no_swap = 0;
+			}
+		}
+		if (no_swap == 1) {
+			return;
+		}
+	}
+}
+
+int main(void) {
+	int a_list[] = {5, 3 ,8 ,6};
+	int list_length = sizeof(a_list) / sizeof(a_list[0]);
+
+	printf("<><><><><><><><><><><><><><>\n");
+	printf("Исходный массив: ");
+	for (int i = 0; i < 4; i++) {
+		printf("%d ", a_list[i]);
+	}
+	printf("\n<><><><><><><><><><><><><><>");
+	printf("\n");
+
+	bubble_sort(a_list, list_length);
+
+	printf("<><><><><><><><><><><><><><>\n");
+	printf("Отсортированный массив: ");
+	for (int i = 0; i < list_length; i++) {
+		printf("%d ", a_list[i]);
+	}
+	printf("\n<><><><><><><><><><><><><><>");
+	printf("\n");
+
+	return 0;
+}
+
+*/
+//
+///Сортировка вставками
+//
+
+void insertion_sort(int a_list[], int list_length) {
+	for (int i = 1; i < list_length; i++) {
+		int value = a_list[i];
+		int j = i;
+
+		while (j > 0 && a_list[j - 1] > value) {
+			a_list[j] = a_list[j - 1];
+			j--;	
+		}
+
+		a_list[j] = value;
+	}
+}
+
+int main(void) {
+	int a_list[] = {6, 5, 8, 2};
+	int list_length = sizeof(a_list) / sizeof(a_list[0]);
+
+	printf("<><><><><><><><><><><><><><>\n");
+        printf("Исходный массив: ");
+        for (int i = 0; i < 4; i++) {
+                printf("%d ", a_list[i]);
+        }
+        printf("\n<><><><><><><><><><><><><><>");
+        printf("\n");
+
+	insertion_sort(a_list, list_length);
+
+
+        printf("<><><><><><><><><><><><><><>\n");
+        printf("Отсортированный массив: ");
+
+	for (int i = 0; i < list_length; i++) {
+		printf("%d ", a_list[i]);
+	}
+        printf("\n<><><><><><><><><><><><><><>");
+        printf("\n");		
+}
+
+
