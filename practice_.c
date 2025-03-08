@@ -230,10 +230,15 @@ int main(void) {
 
 int main() {
 	const char str[] = "Hello, world!";
+	const int list[] = {2, 8, 6, 5};
+
 	size_t length = strlen(str);
 	int len = strlen(str);
+	
+	int list_length = sizeof(list) / sizeof(list[0]);
 
-	printf("Длина строки: %zu, Или: %d\n", length, len); // 13
+	printf("Длина строки: %zu, Или: %d\n", length, len); 
+	printf("Длинна массива %d,\n", list_length);
 
 }
 
@@ -285,7 +290,7 @@ int main(void) {
 	return 0;
 }
 
-*/
+
 //
 ///Сортировка вставками
 //
@@ -312,6 +317,7 @@ int main(void) {
         printf("Исходный массив: ");
         for (int i = 0; i < 4; i++) {
                 printf("%d ", a_list[i]);
+		printf("\a");
         }
         printf("\n<><><><><><><><><><><><><><>");
         printf("\n");
@@ -328,5 +334,29 @@ int main(void) {
         printf("\n<><><><><><><><><><><><><><>");
         printf("\n");		
 }
+//
+//
+//Попробую написать сортировку слиянием
+//
+//
+//Пока не могу додуматсья как)))
+//
+*/
+int main(void) {
+	int size[] = {sizeof(int), sizeof(char), sizeof(long),
+		sizeof(long long), sizeof(double), sizeof(long double)};
+	int size_length = sizeof(size) / sizeof(size[0]);
+	char *types[] = {
+		"int", "char",
+		"long long", "double",
+		"long double"
+	};
+	for (int i = 0; i < size_length; i++) {
+		printf("Тип %s имеет размер %d байт(ов).\n", types[i], size[i]);
+	}
+	
+	return 0;
+}
+
 
 
